@@ -6,6 +6,14 @@
 #Write customer data into a file
 
 customer_list = [ID: 34]
+def menu():
+    operations = input("Choose your operation: "
+                       "1: customer "
+                       "2: product")
+    if operations == 1:
+        c_operations = input("Choose your customer operation: "
+                             "1: ")
+
 
 def Customer_details():
     ID = input("Enter your ID: ")
