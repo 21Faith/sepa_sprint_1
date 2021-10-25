@@ -4,7 +4,12 @@
 #Delete a product
 #Update product details using product ID
 #Write product data into a file
-#purchase(should also check whether there are enough products to purchase)(customer ID, Product ID & amount )
+#purchase(should also check whether there are enough products to   apurchase)(customer ID, Product ID & amount )
+
+product_list = ["ID": 00023, "Name": "Bread", "Quantity": 2, "Price": 50
+                "ID": 00036, "Name": "Milk", "Quantity": 6, "price": 65
+                "ID": 00037, "Name": "soap", "Quantity": 1 "Price": 120
+                ]
 
 
 def product_details():

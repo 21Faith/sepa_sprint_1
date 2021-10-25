@@ -5,7 +5,12 @@
 #Update customer details using their ID
 #Write customer data into a file
 
-customer_list = [ID: 34]
+customer_list = [["34678912", "Caren", "2345"],
+                ["35679021", "Peter", "4578"],
+                ["27689045","Floice", "2000"]]
+
+
+
 def menu():
     operations = input("Choose your operation: "
                        "1: customer "
@@ -19,9 +24,10 @@ def Customer_details():
     ID = input("Enter your ID: ")
     Name = input("Enter your name: ")
     Address = input("Enter your physical address: ")
-    customer_data = ["ID", "Name", "Address"]
-    for a in customer_data:
-        print(a)
+    customer_data = [ID, Name, Address]
+    customer_list.append(customer_data)
+    return customer_list
+
 
 Customer_details()
 
@@ -37,16 +43,17 @@ def update_info():
     ID = input("Enter your ID: ")
     Name = input("Enter your name: ")
     Address = input("Enter your Address: ")
-    customer_data = ["ID", "Name", "Address"]
+    customer_data = [ID, Name, Address]
     customer_data[1:2] = ["New_Name", "New_Address"]
     print(customer_data)
 
 update_info()
 
 #file
-def infile():
-customers = open("customers.txt", "w")
-customers.write(customers)
-customers.close()
+def infile(customer_list):
+    customers = open("customers.txt", "w")
+    customers.write(str(customer_list))
+    customers.close()
+    print(customer_list)
 
 infile()
