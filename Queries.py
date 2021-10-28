@@ -34,8 +34,6 @@ def menu():
     else:
         print("Invalid operation try again.")
 
-def search():
-    for i in product_list(:
 
 
 
