@@ -5,7 +5,7 @@
 #Inserting new product data, delete deleting the product data entered, updating product data,
 #writing the product data into a file and making a purchase.
 
-product_list = [["00023", "Breadd", 2, 50],
+product_list = [["00023", "Bread", 2, 50],
                 ["00036", "Milk", 6, 65],
                 ["00037", "soap", 1, 120]
                 ]
@@ -75,3 +75,18 @@ def file():
     product_file.close()
 
 def purchase():
+    customer_id = input("Enter customer id: ")
+    product_name = input("Enter product to purchase: ")
+    product_quantity = int(input("Enter the number of products you wish to purchase: "))
+    for i in range(len(product_list)):
+        if product_name in product_list[i]:
+            if product_quantity <= int(product_list[i]):
+                New_amount = int(product_list[i]) - product_quantity
+                product_list[i] = New_amount
+            else:
+                print("product out of stock.")
+        else:
+            print("Product unavailable.")
+    print(product_list)
+
+purchase()
