@@ -11,22 +11,22 @@ product_list = [["00023", "Bread", 2, 50],
                 ]
 
 def menu():
-    operations = input("Choose your operation: "
-                       "1: customer "
-                       "2: product")
-    if operations == 1:
-        c_operations = input("Choose your customer operation: "
-                             "1: Input customer data: "
-                             "2: Delete customer data: "
-                             "3: Updating customer data : "
-                             "4: Add customer data to file: ")
-    elif operations == 2:
-        p_operations = input("Choose a product operation: "
+    p_operations = input("Choose a product operation: "
                              "1: Enter product data: "
                              "2: Delete product data: "
                              "3: Update product data: "
                              "4: Add product data to file: "
                              "5: Purchase a product: ")
+    if p_operations == 1:
+        product_details()
+    elif p_operations == 2:
+        delete(product_list)
+    elif p_operations == 3:
+        product_update()
+    elif p_operations == 4:
+        file(product_list)
+    elif p_operations == 5:
+        purchase
     else:
         print("Invalid operation try again.")
 
@@ -76,12 +76,13 @@ def file():
 
 def purchase():
     customer_id = input("Enter customer id: ")
-    product_name = input("Enter product to purchase: ")
+    product_id = input("Enter product id: ")
     product_quantity = int(input("Enter the number of products you wish to purchase: "))
     for i in range(len(product_list)):
-        if product_name in product_list[i]:
-            if product_quantity <= int(product_list[i]):
-                New_amount = int(product_list[i]) - product_quantity
+        if product_id in product_list[i]:
+            print(product_list[i][3])
+            if product_quantity <= product_list[i]:
+                New_amount = product_list[i] - product_quantity
                 product_list[i] = New_amount
             else:
                 print("product out of stock.")
@@ -90,3 +91,4 @@ def purchase():
     print(product_list)
 
 purchase()
+

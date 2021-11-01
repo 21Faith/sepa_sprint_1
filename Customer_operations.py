@@ -4,31 +4,30 @@
 #The program also goes further to illustrate the use of arrays in getting customer input details:
 # New customer data, deleting customer information, updating customer data and writing the customer data into a file.
 
-customer_list = [["34678912", "Caren", "2345"],
-                ["35679021", "Peter", "4578"],
-                ["27689045","Floice", "2000"]
+customer_list = [[2300685,"Trevor", 567],
+                 [4567045, "Bernice", 235],
+                 [3456775, "Amanda", 800]
                  ]
 
 
-def menu():
-    operations = input("Choose your operation: "
-                       "1: customer "
-                       "2: product")
-    if operations == 1:
-        c_operations = input("Choose your customer operation: "
+def customer_operation_menu():
+    c_operations = int(input("Choose your customer operation: "
                              "1: Input customer data: "
                              "2: Delete customer data: "
                              "3: Updating customer data : "
-                             "4: Add customer data to file: ")
-    elif operations == 2:
-        p_operations = input("Choose a product operation: "
-                             "1: Enter product data: "
-                             "2: Delete product data: "
-                             "3: Update product data: "
-                             "4: Add product data to file: "
-                             "5: Purchase a product: ")
+                             "4: Add customer data to file: "))
+
+
+    if c_operations == 1:
+            Customer_details()
+    elif c_operations == 2:
+            delete()
+    elif c_operations == 3:
+            update_info()
+    elif c_operations == 4:
+            infile(customer_list)
     else:
-        print("Invalid operation try again.")
+            print("Invalid operation try again.")
 
 
 def Customer_details():
@@ -37,31 +36,38 @@ def Customer_details():
     Address = input("Enter your physical address: ")
     customer_data = [ID, Name, Address]
     customer_list.append(customer_data)
+    print(customer_list)
+    customers = open("customers.txt", "w")
+    customers.write(str(customer_list))
     return customer_list
 
-def delete(customer_list):
-    ID = input("Enter your ID: ")
-    Name = input("Enter your name: ")
-    Address = input("Enter your physical address: ")
-    customer_data = [ID, Name, Address]
-    for c in customer_list():
-        if c == (ID):
-            del customer_data
-            print("Your data has been deleted!")
+
+def delete():
+    ID = int(input("Enter your ID: "))
+    for c in range(len(customer_list)):
+        if customer_list[c][0] == ID:
+            customer_list.remove(customer_list[c])
+            break
+    print(customer_list)
+
 
 def update_info():
-
-    customer_list = []
-    ID = input("Enter your ID: ")
-    Name = input("Enter your name: ")
-    Address = input("Enter your Address: ")
-    customer_data = [ID, Name, Address]
-    #customer_data = customer_data2
-    New_Name = ""
-    New_Address = ""
-    customer_data2 = [ID, New_Name, New_Address]
-    customer_data2.append(customer_list)
-    print("Your updated information is: ",ID, New_Name, New_Address)
+    ID = int(input("Enter your ID: "))
+    for i in range(len(customer_list)):
+        if ID in customer_list[0]:
+            options = int(input("Choose what to change: "
+                            "1: Name " 
+                            "2: Address"))
+            if options == 1:
+                new_name = input("Enter the new name:")
+                customer_list[i][1] = new_name
+            elif options == 2:
+                new_address = input("Enter the new address: ")
+                customer_list[i][2] = new_address
+            else:
+                print("Invalid option.")
+            print(customer_list)
+            exit()
 
 
 def infile(customer_list):
@@ -69,3 +75,5 @@ def infile(customer_list):
     customers.write(str(customer_list))
     customers.close()
     print(customer_list)
+
+

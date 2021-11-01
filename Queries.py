@@ -9,7 +9,7 @@ customer_list = [["34678912", "Caren", "2345"],
                 ["35679021", "Peter", "4578"],
                 ["27689045","Floice", "2000"]]
 
-product_list = [["00023", "Breadd", 2, 50],
+product_list = [["00023", "Bread", 2, 50],
                 ["00036", "Milk", 6, 65],
                 ["00037", "soap", 1, 120]
                 ]
@@ -33,9 +33,6 @@ def menu():
                              "5: Purchase a product: ")
     else:
         print("Invalid operation try again.")
-
-
-
 
 
 
