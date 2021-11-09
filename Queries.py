@@ -5,35 +5,39 @@
 #list a customers; name,products purchased(amounts too), money spent
 #Quit
 
-customer_list = [["34678912", "Caren", "2345"],
-                ["35679021", "Peter", "4578"],
-                ["27689045","Floice", "2000"]]
+#import Product_operations
+
+
 
 product_list = [["00023", "Bread", 2, 50],
                 ["00036", "Milk", 6, 65],
                 ["00037", "soap", 1, 120]
                 ]
 
-def menu():
-    operations = input("Choose your operation: "
-                       "1: customer "
-                       "2: product")
-    if operations == 1:
-        c_operations = input("Choose your customer operation: "
-                             "1: Input customer data: "
-                             "2: Delete customer data: "
-                             "3: Updating customer data : "
-                             "4: Add customer data to file: ")
-    elif operations == 2:
-        p_operations = input("Choose a product operation: "
-                             "1: Enter product data: "
-                             "2: Delete product data: "
-                             "3: Update product data: "
-                             "4: Add product data to file: "
-                             "5: Purchase a product: ")
-    else:
-        print("Invalid operation try again.")
+#
+
+def product_search():
+    p_ID = input("Enter the product ID: ")
+    for n in range(len(product_list)):
+        if p_ID in product_list[0]:
+            search = int(input("Choose a search option: "
+                                "1: Product name "
+                                "2: Product quantity "
+                                "3: Product price "))
+
+            if search == 1:
+                new_name = input("Enter a new product name:")
+                product_list[n][1] = new_name
+            elif search == 2:
+                new_quantity = input("Enter the new amount: ")
+                product_list[n][2] = new_quantity
+            elif search == 3:
+                new_price = input("Enter a new price: ")
+                product_list[n][3] = new_price
+            else:
+                print("Invalid option.")
+            print(product_list)
 
 
 
-
+product_search()

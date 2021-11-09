@@ -77,3 +77,4 @@ def infile(customer_list):
     print(customer_list)
 
 
+customer_operation_menu()
