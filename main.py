@@ -6,17 +6,17 @@
 
 
 from Customer_operations import *
-from Product_operations import *
+from product_operations import *
 
 
 customer_list = [["34678912", "Caren", "2345\n"],
                 ["35679021", "Peter", "4578\n"],
-                ["27689045","Floice", "2000"]
+                ["27689045","Floice", "2000\n"]
                  ]
 
 product_list = [["00023", "Bread", 2, 50],
-                ["00036", "Milk", 6, 65],
-                ["00037", "soap", 1, 120]
+                ["\n00036", "Milk", 6, 65],
+                ["\n00037", "soap", 1, 120]
                 ]
 
 

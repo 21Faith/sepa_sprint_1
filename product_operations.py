@@ -5,6 +5,9 @@
 #Inserting new product data, delete deleting the product data entered, updating product data,
 #writing the product data into a file and making a purchase.
 
+from product_class import product_operations
+
+
 product_list = [["00023", "Bread", 2, 50],
                 ["00036", "Milk", 6, 65],
                 ["00037", "soap", 1, 120]
