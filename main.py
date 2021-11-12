@@ -17,7 +17,7 @@ customer_list = [["34678912", "Caren", "2345\n"],
 product_list = [["00023", "Bread", 2, 50],
                 ["\n00036", "Milk", 6, 65],
                 ["\n00037", "soap", 1, 120]
-                ]
+                ]9
 
 
 def main_menu():

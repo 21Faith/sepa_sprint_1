@@ -6,7 +6,7 @@
 #writing the product data into a file and making a purchase.
 
 from product_class import product_operations
-
+p_operations = product_operations
 
 product_list = [["00023", "Bread", 2, 50],
                 ["00036", "Milk", 6, 65],
