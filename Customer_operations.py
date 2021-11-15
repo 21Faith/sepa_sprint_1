@@ -4,12 +4,10 @@
 #The program also goes further to illustrate the use of arrays in getting customer input details:
 # New customer data, deleting customer information, updating customer data and writing the customer data into a file.
 
-from customer_class import customer_operations
+from customer_class import customer
+customer_list = customer
 
-c_operations = customer_operations          
 
-
-customer_operations_1 = customer_operations
 
 customer_list = [[2300685,"Trevor", 567],
                  [4567045, "Bernice", 235],
